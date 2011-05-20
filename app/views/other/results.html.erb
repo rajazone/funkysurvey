@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "main" %><body><h1>Survey name : <%= @survey.surveyname %></h1>
+<div align="right">
+<%= link_to 'Go back',  :controller => "other" , :action => "surveyresults"%><br/>
+<%= link_to 'Home page',  :controller => "other", :action => "home" %><br/>
+</div>
+<% i=0 %>
+<% @questions.each do |question| %>
+<b><%="Question:  " + question.questiontxt %></b><br/>
+[option 1-<b><%=question.option1%></b>,option 2- <b><%=question.option2%></b>,option 3- <b><%=question.option3%></b>,option 4-<b><%=question.option4%></b>,option 5-<b><%=question.option5%></b>]<br/>
+Total Number of Responses  <b><%= question.totalresponse.to_s %></b><br/>
+<% if question.totalresponse ==0 %>
+<b>Average response for the question <b><%= 0.0 %></b><br/>
+<% else %>
+Average response for the question <b><%= Integer(@avgresponse[i] * 100) / Float(100) %></b><br/>
+<% end %>
+<hr>
+<% i=i+1 %>
+<% end %></body>
+
+

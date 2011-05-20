@@ -1,0 +1,17 @@
+<h1>View Survey Results</h1>
+<% if @surveys.length > 0 %>
+<table border=10 bordercolor=blue>
+  <tr>
+    <th>SURVEY NAME</th>
+    <th>VIEW SURVEY RESULTS</th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.surveyname %></td>
+    <td><%= link_to 'VIEW SURVEY RESULTS', :controller => "other", :action => "viewsurvey",:tsid => survey.id %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />

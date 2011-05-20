@@ -1,0 +1,20 @@
+<h1>List of Available Surveys</h1>
+<% if @surveys.length > 0 %>
+<table border=10 bordercolor=blue>
+  <tr>
+    <th>SURVEY NAME</th>
+    <th>TAKE SURVEY</th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.surveyname %></td>
+    <td><%= link_to 'TAKE THIS SURVEY', :controller => "other", :action => "takesurvey",:tsid => survey.id %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'Survey Administration',  :controller => "surveys"%><br/>
+<%= link_to 'View Survey Results',  :controller => "other" , :action => "surveyresults"%><br/>

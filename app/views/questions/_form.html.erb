@@ -1,0 +1,69 @@
+
+<% @question.survey_id=session[:surveyid] %>
+<%= form_for(@question) do |f| %>
+
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    ENTER QUESTION <br />
+    <%= f.text_area :questiontxt, :rows =>3, :cols =>140 %>
+  </div>
+  <div class="field">
+    ENTER OPTION1<br />
+    <%= f.text_area :option1, :rows =>3, :cols =>140  %>
+  </div>
+  <div class="field">
+    ENTER OPTION2<br />
+    <%= f.text_area :option2 , :rows =>3, :cols =>140 %>
+  </div>
+  <div class="field">
+    ENTER OPTION3<br />
+    <%= f.text_area :option3 , :rows =>3, :cols =>140 %>
+  </div>
+  <div class="field">
+    ENTER OPTION4<br />
+    <%= f.text_area :option4 , :rows =>3, :cols =>140 %>
+  </div>
+  <div class="field">
+    ENTER OPTION5<br />
+    <%= f.text_area :option5 , :rows =>3, :cols =>140 %>
+  </div>
+   <div class="field">
+    <%= f.hidden_field :totalresponse %>
+  </div>
+     <div class="field">
+    <%= f.hidden_field :opt1count %>
+  </div>
+
+   <div class="field">
+    <%= f.hidden_field :opt2count %>
+  </div>
+
+   <div class="field">
+    <%= f.hidden_field :opt3count %>
+  </div>
+
+   <div class="field">
+    <%= f.hidden_field :opt4count %>
+  </div>
+
+   <div class="field">
+    <%= f.hidden_field :opt5count %>
+  </div>
+ <div class="field">
+    <%= f.hidden_field :survey_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

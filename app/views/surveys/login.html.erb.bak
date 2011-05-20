@@ -1,0 +1,9 @@
+<h1>welcome </h1>
+
+<p id="notice"><%= notice %></p>
+<form action="surveys/createsession" method="post">
+Enter your username: <input type="text" name="username" /><br />
+Enter your password: <input type="text" name="password" /><br />
+<input type="submit" value="Submit" /><br/>
+<%= link_to 'New User?Click here to Sign up',new_user_path %>
+</form>

@@ -1,0 +1,19 @@
+<h1>List of Available Surveys</h1>
+<% if @surveys.length > 0 %>
+<table border=10 bordercolor=blue>
+  <tr>
+    <th>SURVEY NAME</th>
+    <th>TAKE SURVEY</th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.surveyname %></td>
+    <td><%= link_to 'TAKE THIS SURVEY', survey %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'CLICK HERE TO CREATE A NEW SURVEY', new_survey_path %>

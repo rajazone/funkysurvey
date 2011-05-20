@@ -1,0 +1,23 @@
+<h1>List of Available Surveys</h1>
+<% if @surveys.length > 0 %>
+<table border=10 bordercolor=blue>
+  <tr>
+    <th>SURVEY NAME</th>
+    <th>SHOW/EDIT QUESTIONS</th>
+    <th>EDIT SURVEY NAME</th>
+    <th>DELETE SURVEY</th>
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr>
+    <td><%= survey.surveyname %></td>
+    <td><%= link_to 'QUESTIONS PAGE', survey %></td>
+    <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+    <td><%= link_to 'Delete', survey, :confirm => 'Are you sure you want to delete this survey and all questions associated with this survey?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'CLICK HERE TO CREATE A NEW SURVEY', new_survey_path %>

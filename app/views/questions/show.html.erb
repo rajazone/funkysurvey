@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "main" %><body>
+<div align="right">
+<%= link_to 'Go Back to Survey Page', surveys_path %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @question.questiontxt %>
+</p>
+
+<p>
+  <b>Option1:</b>
+  <%= @question.option1 %>
+</p>
+
+<p>
+  <b>Option2:</b>
+  <%= @question.option2 %>
+</p>
+
+<p>
+  <b>Option3:</b>
+  <%= @question.option3 %>
+</p>
+
+<p>
+  <b>Option4:</b>
+  <%= @question.option4 %>
+</p>
+
+<p>
+  <b>Option5:</b>
+  <%= @question.option5 %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'view question page',  :controller => "surveys" , :action => "show" , :id =>session[:surveyid] %></body>
+

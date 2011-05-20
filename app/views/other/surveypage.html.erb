@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag "main" %><body><h1>Survey name : <%= @survey.surveyname %></h1>
+<div align="right">
+
+<%= link_to 'Home page',  :controller => "other", :action => "home" %><br/>
+</div>
+<%=form_tag('/other/surveysubmit')%>
+<% @questions.each do |question| %>
+<%="Question: " + question.questiontxt %><br/>
+<%=radio_button_tag question.id,1,checked=true %><%=question.option1%><br/>
+<%=radio_button_tag question.id,2%><%=question.option2%><br/>
+<%=radio_button_tag question.id,3 %><%=question.option3%><br/>
+<%=radio_button_tag question.id,4 %><%=question.option4%><br/>
+<%=radio_button_tag question.id,5 %><%=question.option5%><br/><hr>
+<% end %>
+<%= submit_tag "Submit this survey" %><br/></body>

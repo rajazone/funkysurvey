@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag "main" %>
+<h1>Survey Engine </h1>
+<h1>Welcome </h1>
+<body>
+<p id="notice"><%= notice %></p>
+<form action="surveys/createsession" method="post">
+Enter your username: <input type="text" name="username" /><br /><br/>
+Enter your password: <input type="password" name="password" /><br /><br />
+<input type="submit" value="Submit" /><br/><br />
+<%= link_to 'New User? Click here to Sign up',new_user_path %>
+</form></body>

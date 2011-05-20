@@ -1,0 +1,9 @@
+<h1>Editing question</h1>
+
+<div align="right">
+<%= link_to 'Go Back to Survey Page', surveys_path %>
+</div>
+<%= render 'form' %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'view question page',  :controller => "surveys" , :action => "show" , :id =>session[:surveyid] %>

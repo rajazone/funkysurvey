@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Surveyname:</b>
+  <%= @survey.surveyname %>
+   session[:surveyid]= <%= @survey.id %>
+</p>
+
+<div id="questions">
+<table border=10 bordercolor=blue>
+  <tr>
+    <th>QUESTION</th>
+    <th>OPTION1</th>
+    <th>OPTION2</th>
+    <th>OPTION3</th>
+    <th>OPTION4</th>
+    <th>OPTION5</th>
+  </tr>
+
+<% @survey.questions.each do |survey| %>
+  <tr>
+    <td><%= survey.questiontxt %></td>
+    <td><%= survey.option1 %></td>
+    <td><%= survey.option2 %></td>
+    <td><%= survey.option3 %></td>
+    <td><%= survey.option4 %></td>
+    <td><%= survey.option5 %></td>
+    <td><%= link_to 'Show', survey %>
+    <td><%= link_to 'Edit', edit_survey_path(@survey) %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<%= link_to 'Click here to Add a New Question to this Survey',  :controller => "questions" , :action =>"new"%>
+<%= link_to 'Go Back to Survey Page', surveys_path %>
+
